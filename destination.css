@@ -1,0 +1,54 @@
+body{
+    background-image: url(/Images/pexels-philippedonn-1169754.jpg);
+    height: 1000px;
+    width: 100%;
+    background-size: 100% 100%;
+}
+.navbar{
+    /* overflow: hidden; */
+    height: 100px;
+    width: 50%;
+    background-color: rgba(59, 57, 57, 0.9);
+    margin-left: 700px ;
+    /* margin-top: -20px; */
+    
+}
+.navbar
+    a{
+ text-decoration: none;
+ color: white;
+ width: 100px;
+ margin-left: 70px;    
+}
+.left{
+    margin-left: 180px;
+   margin-top: 50px;
+   font-family: 'Barlow Condensed', sans-serif;
+   letter-spacing: 0.4rem;
+}
+.abc{
+    color: white; 
+    
+    font-size: 20px;
+}
+.moon{
+    height: 400px; 
+    width: 400px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    margin-left: 200px;
+}
+.Planets{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    margin-top: -700px;
+    margin-left: 700px;
+    gap: 25PX;  
+}
+.Planets li a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    
+}

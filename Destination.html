@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="destination.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div>
+
+    <div class="logo" style="display: flex; margin-top: 70px; margin-left: 75px; ">
+
+      <img src="Images/logo.svg" alt="" width="50" height="50">
+
+    </div>
+
+    <hr style="color: darkgray;height: 3.5px; width: 40%; margin-left: 165px; top: 75px; position: absolute;">
+
+    <div class="navbar" style="margin-top: -80px;">
+      <nav class="">
+        <a href="Index.html">00 Home</a>
+        <a href="Destination.html">01 Destination </a>
+        <a href="crew1.html">02 Crew</a>
+        <a href="technology.html">03 Technology</a>
+      </nav>
+    </div>
+
+    <div class="abc">
+      <div class="left" style="width: 50%;">
+        <span style="opacity: 0.25; margin-left: -30px; font-weight: 600;">01</span>
+
+        <p style="margin-top: -30px; margin-left: 30px; font-family: 'Barlow Condensed', sans-serif;">PICK YOUR
+          DESTINATION</p>
+      </div>
+
+      <div class="moon" >
+        <img id="planet-img" src="Images/image-moon.png" alt="" style="height: 100%; width: 100%;">
+      </div>
+
+      <div>
+        <ul class="Planets">
+          <li>
+            <a href="#" class="planet-link" data-planet="moon">MOON</a>
+          </li>
+
+          <li>
+            <a href="#" class="planet-link" data-planet="mars">MARS</a>
+          </li>
+
+          <li>
+            <a href="#" class="planet-link" data-planet="europa">EUROPA</a>
+          </li>
+
+          <li>
+            <a href="#" class="planet-link" data-planet="titan">TITAN</a>
+          </li>
+
+        </ul>
+      </div>
+
+       <div >
+      <h1 id="planet-title" style="margin-left: 740px; font-size: 6.5rem; font-family: 'Bellefair', serif; margin-top: 50px;">MOON</h1>
+      <p id="planet-desc" style="margin-left: 730px; margin-top: -15px; width: 30%; text-align: justify;">
+        See our planet as you’ve never seen it before.A 
+        perfect relaxing trip away to help regain 
+        perspective and come back refreshed.
+        While 
+        you’re there, take in some history by visiting the 
+        Luna 2 and Apollo 11 landing sites.
+      </p>
+    </div>
+
+      <hr style="color: rgb(238, 231, 231);height: 3px; width: 33%; margin-left: 730px; margin-top: 35px;">
+
+      <div class="planet-stats" style="margin-left: 730px; margin-bottom: 400px !important;">
+        <p>AVG. DISTANCE</p>
+        <p id="planet-distance" style="margin-top: -15px;font-size: 1.9rem;">384,400 KM</p>
+        <p style="margin-left: 250px;margin-top: -92px;">EST. TIME TRAVEL</p>
+        <p id="planet-time" style="margin-left: 250px; margin-top:-13px;font-size: 1.9rem;">3 DAYS</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Planet Data
+    const planetsData = {
+      moon: {
+        img: "Images/image-moon.png",
+        title: "MOON",
+        desc: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+        distance: "384,400 KM",
+        time: "3 DAYS"
+      },
+      mars: {
+        img: "Images/image-mars.png",
+        title: "MARS",
+        desc: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+        distance: "225 MIL. KM",
+        time: "9 MONTHS",
+        
+      },
+      europa: {
+        img: "Images/image-europa.png",
+        title: "EUROPA",
+        desc: "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+        distance: "628 MIL. KM",
+        time: "3 YEARS"
+      },
+      titan: {
+        img: "Images/image-titan.png",
+        title: "TITAN",
+        desc: "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
+        distance: "1.2 BIL. KM",
+        time: "7 YEARS"
+      }
+    };
+
+    // Change Content on Click
+    document.querySelectorAll(".planet-link").forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const planetKey = this.getAttribute("data-planet");
+        updatePlanetInfo(planetKey);
+      });
+    });
+
+    function updatePlanetInfo(planet) {
+      document.getElementById("planet-img").src = planetsData[planet].img;
+      document.getElementById("planet-title").textContent = planetsData[planet].title;
+      document.getElementById("planet-desc").textContent = planetsData[planet].desc;
+      document.getElementById("planet-distance").textContent = planetsData[planet].distance;
+      document.getElementById("planet-time").textContent = planetsData[planet].time;
+    }
+  </script>
+
+
+
+  <!-- <p style="font-family: 'Bellefair', serif; font-size: 110px; margin-left: 730px; color: #fff; margin-top: 35px;">MOON</p>
+      <P style="color: #d0d6f9; font-size: 20px; font-family: 'Barlow', sans-serif; margin-left: 730px; margin-top: -30px;">See our planet as you’ve never seen it before.
+        <br>
+         A perfect relaxing trip away to help regain 
+         <br>
+          perspective and come back refreshed. While 
+          <br>
+          you’re there, take in some history by visiting the
+          <br>
+           Luna 2 and Apollo 11 landing sites.
+
+      </P> -->
+
+  <!-- <hr style="color: rgb(238, 231, 231);height: 3px; width: 33%; margin-left: 730px;font-weight: 500; margin-top: 45px;">
+     
+      <div>
+      <p style="color: #d0d6f9; margin-left: 730px; margin-top: 35px;"> AVG. DISTANCE</p>
+      <p style="color: #f3e6e6; margin-left: 730px; font-size: 30px; margin-top: -25px;">384,400 KM</p>
+      <p style="color: #d0d6f9; margin-left: 950px; margin-top: -83px;">EST. TIME TRAVEL</p>
+      <p style="color: #f3e6e6; margin-left: 950px; margin-top: -25px;font-size: 30px;">3 DAYS</p>
+      <hr style="margin-top: 150px;">
+      </div> -->
+
+
+
+
+</body>
+
+</html>
